@@ -1,0 +1,39 @@
+spring:
+  main:
+    banner-mode: console
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      repositories:
+        enabled: true
+      database: test
+banner:
+  charset: UTF-8
+server:
+  context-path: /spring-mongodb
+  connection-timeout: 30
+  compression:
+    enabled: true
+    min-response-size: 1
+  undertow:
+    accesslog:
+      dir: logs
+      enabled: true
+      pattern: combined
+  port: 8080
+  display-name: MongoDB Example
+logging:
+  config: classpath:log4j2-spring.xml
+security:
+  headers:
+    xss: true
+    hsts: all
+    cache: true
+    frame: true
+    content-type: true
+    content-security-policy: null
+    content-security-policy-mode: default
+  enable-csrf: true
+  require-ssl: false
+  filter-dispatcher-types: ASYNC, FORWARD, INCLUDE, REQUEST, ERROR
